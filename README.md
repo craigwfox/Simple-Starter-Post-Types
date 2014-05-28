@@ -1,10 +1,7 @@
-// --------------------------------------------------------------------- //
+  # Simple Starter Post types
 
-  ###Simple Starter Post types
   By Craig Fox @ craigwfox.com
   https://github.com/craigwfox/Simple-Starter-Post-Types.git
-
-// --------------------------------------------------------------------- //
 
   Plugin URL: https://github.com/craigwfox/Simple-Starter-Post-Types.git
 
