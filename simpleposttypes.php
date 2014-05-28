@@ -67,17 +67,17 @@
   add_action( 'init', 'sspt_tax_banners', 0 );
 
   // ----- Banners Filtering
-    add_action( 'restrict_manage_posts', 'rgcpt_banner_filter' );
-    function rgcpt_banner_filter() {
+    add_action( 'restrict_manage_posts', 'sspt_banner_filter' );
+    function sspt_banner_filter() {
       $screen = get_current_screen();
       global $wp_query;
-      if ( $screen->post_type == 'rgcpt_banners' ) {
+      if ( $screen->post_type == 'sspt_banners' ) {
         wp_dropdown_categories( array(
           'show_option_all' => 'Show All Categories',
-          'taxonomy' => 'rgcpt_tax_banners',
-          'name' => 'rgcpt_tax_banners',
+          'taxonomy' => 'sspt_tax_banners',
+          'name' => 'sspt_tax_banners',
           'orderby' => 'name',
-          'selected' => ( isset( $wp_query->query['rgcpt_tax_banners'] ) ? $wp_query->query['rgcpt_tax_banners'] : '' ),
+          'selected' => ( isset( $wp_query->query['sspt_tax_banners'] ) ? $wp_query->query['sspt_tax_banners'] : '' ),
           'hierarchical' => false,
           'depth' => 3,
           'show_count' => false,
@@ -85,12 +85,12 @@
         ) );
       }
     }
-    add_filter( 'parse_query','rgcpt_banner_filtering' );
-    function rgcpt_banner_filtering( $query ) {
+    add_filter( 'parse_query','sspt_banner_filtering' );
+    function sspt_banner_filtering( $query ) {
       $qv = &$query->query_vars;
-      if ( ( $qv['rgcpt_tax_banners'] ) && is_numeric( $qv['rgcpt_tax_banners'] ) ) {
-        $term = get_term_by( 'id', $qv['rgcpt_tax_banners'], 'rgcpt_tax_banners' );
-        $qv['rgcpt_tax_banners'] = $term->slug;
+      if ( ( $qv['sspt_tax_banners'] ) && is_numeric( $qv['sspt_tax_banners'] ) ) {
+        $term = get_term_by( 'id', $qv['sspt_tax_banners'], 'sspt_tax_banners' );
+        $qv['sspt_tax_banners'] = $term->slug;
       }
     }
 
@@ -153,17 +153,17 @@
     add_action( 'init', 'sspt_tax_callout', 0 );
   
   // ----- Callouts Filtering
-    add_action( 'restrict_manage_posts', 'rgcpt_callout_filter' );
-    function rgcpt_callout_filter() {
+    add_action( 'restrict_manage_posts', 'sspt_callout_filter' );
+    function sspt_callout_filter() {
       $screen = get_current_screen();
       global $wp_query;
-      if ( $screen->post_type == 'rgcpt_callouts' ) {
+      if ( $screen->post_type == 'sspt_callouts' ) {
         wp_dropdown_categories( array(
           'show_option_all' => 'Show All Categories',
-          'taxonomy' => 'rgcpt_tax_callout',
-          'name' => 'rgcpt_tax_callout',
+          'taxonomy' => 'sspt_tax_callout',
+          'name' => 'sspt_tax_callout',
           'orderby' => 'name',
-          'selected' => ( isset( $wp_query->query['rgcpt_tax_callout'] ) ? $wp_query->query['rgcpt_tax_callout'] : '' ),
+          'selected' => ( isset( $wp_query->query['sspt_tax_callout'] ) ? $wp_query->query['sspt_tax_callout'] : '' ),
           'hierarchical' => false,
           'depth' => 3,
           'show_count' => false,
@@ -171,12 +171,12 @@
         ) );
       }
     }
-    add_filter( 'parse_query','rgcpt_callout_filtering' );
-    function rgcpt_callout_filtering( $query ) {
+    add_filter( 'parse_query','sspt_callout_filtering' );
+    function sspt_callout_filtering( $query ) {
       $qv = &$query->query_vars;
-      if ( ( $qv['rgcpt_tax_callout'] ) && is_numeric( $qv['rgcpt_tax_callout'] ) ) {
-        $term = get_term_by( 'id', $qv['rgcpt_tax_callout'], 'rgcpt_tax_callout' );
-        $qv['rgcpt_tax_callout'] = $term->slug;
+      if ( ( $qv['sspt_tax_callout'] ) && is_numeric( $qv['sspt_tax_callout'] ) ) {
+        $term = get_term_by( 'id', $qv['sspt_tax_callout'], 'sspt_tax_callout' );
+        $qv['sspt_tax_callout'] = $term->slug;
       }
     }
 ?>
