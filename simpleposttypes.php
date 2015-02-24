@@ -130,7 +130,7 @@
   add_action( 'init', 'sspt_callouts' );
 
   // ----- Callouts Taxonomy
-    function sspt_tax_callout() {
+    function sspt_tax_callouts() {
       $labels = array(
         'name'              => _x( 'Callout Categories', 'taxonomy general name' ),
         'singular_name'     => _x( 'Callout Category', 'taxonomy singular name' ),
@@ -148,9 +148,9 @@
         'labels' => $labels,
         'hierarchical' => true,
       );
-      register_taxonomy( 'sspt_tax_callout', 'sspt_callouts', $args );
+      register_taxonomy( 'sspt_tax_callouts', 'sspt_callouts', $args );
     }
-    add_action( 'init', 'sspt_tax_callout', 0 );
+    add_action( 'init', 'sspt_tax_callouts', 0 );
   
   // ----- Callouts Filtering
     add_action( 'restrict_manage_posts', 'sspt_callout_filter' );
